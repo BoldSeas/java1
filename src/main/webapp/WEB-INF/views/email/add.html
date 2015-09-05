@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1.0, minimum-scale=1.0">
+    <title>更新</title>
+
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../resources/css/carousel.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/accountUpdate.js"></script>
+    <script>
+        function beginSubmit(){
+            var name = $("#inputName").val();
+            var email =$("#inputEmail").val();
+            if(name=="" || name ==undefined || name.length==0)
+            {
+                alert("昵称不能为空!");
+                return false;
+            }
+            if(email=="" || email ==undefined || email.length==0)
+            {
+                alert("邮箱不能为空！");
+                return false;
+            }
+            alert("begin to add!");
+        }
+
+    </script>
+</head>
+<body style="background-color: #eee;">
+<div class="container" style="margin-top:100px;">
+    <div class="panel panel-warning">
+        <div class="panel-heading"><h4>追加个人信息</h4></div>
+        <div class="panel-body">
+            <form class="form-horizontal" action="" method="post" id="up-form">
+                <div class="form-group has-feedback">
+                    <label for="inputEmail" class="col-sm-2 control-label" style="font-size:1.2em;"  >昵称</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputName" name="contactModel.name" placeholder="请输入用户昵称" value="" >
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group has-success has-feedback" id="pwdDiv">
+                    <label for="inputPassword" class="col-sm-2 control-label">邮箱</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputEmail" name="contactModel.email" placeholder="请输入您的邮箱" required >
+                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" id="pwdDivSpan"></span>
+                    </div>
+                </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-4">
+                        <a type="button" class="btn btn-primary btn-lg btn-block" href="javascript:void(0);" onclick="beginSubmit();">提交</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
